@@ -1,0 +1,83 @@
+name: Benford's Law Fraud Detection
+
+on:
+  # Run automatically when .xlsx files change
+  push:
+    paths:
+      - "**.xlsx"
+  # Allow manual trigger from the Actions tab
+  workflow_dispatch:
+    inputs:
+      excel_file:
+        description: "Path to Excel file (relative to repo root)"
+        required: false
+        default: "je_samples.xlsx"
+
+permissions:
+  contents: write
+
+jobs:
+  benford-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Benford's Law analysis
+        run: |
+          FILE="${{ github.event.inputs.excel_file || 'je_samples.xlsx' }}"
+          echo "Analyzing: $FILE"
+          python benford.py "$FILE"
+
+      - name: Check for significant deviations
+        id: check_results
+        run: |
+          if [ -f output/benford_summary.json ]; then
+            # Check if any column has significant=true
+            if python3 -c "
+          import json, sys
+          data = json.load(open('output/benford_summary.json'))
+          sig = [c for c, r in data.items() if r.get('significant')]
+          if sig:
+              print(f'::warning::Benford deviation detected in: {", ".join(sig)}')
+              sys.exit(0)
+          else:
+              print('All columns consistent with Benfords Law.')
+          "; then
+              echo "deviation_found=true" >> "$GITHUB_OUTPUT"
+            else
+              echo "deviation_found=false" >> "$GITHUB_OUTPUT"
+            fi
+          fi
+
+      - name: Upload Benford analysis outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: benford-analysis-outputs
+          path: |
+            output/benford_report.txt
+            output/benford_summary.json
+            output/benford_flagged.csv
+            output/chart_benford_*.png
+          retention-days: 90
+
+      - name: Commit updated outputs back to repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update Benford analysis outputs [skip ci]"
+            git push
+          fi
