@@ -4,7 +4,7 @@
 ======================================================================
 
   Source file       : je_samples.xlsx
-  Analysis run at   : 2026-02-05 02:23:08
+  Analysis run at   : 2026-02-05 02:39:39
   Total rows        : 37,905
   Total columns     : 30
 
