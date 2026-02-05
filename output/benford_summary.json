@@ -1,0 +1,115 @@
+{
+  "Amount": {
+    "n": 37905,
+    "chi2_stat": 800.1013,
+    "p_value": 0.0,
+    "significant": true,
+    "flagged_digits": []
+  },
+  "Credit": {
+    "n": 18954,
+    "chi2_stat": 399.88,
+    "p_value": 0.0,
+    "significant": true,
+    "flagged_digits": []
+  },
+  "AbsoluteAmount": {
+    "status": "skipped",
+    "reason": "insufficient data"
+  },
+  "JEEntryKey": {
+    "n": 37905,
+    "chi2_stat": 177352.7033,
+    "p_value": 0.0,
+    "significant": true,
+    "flagged_digits": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "JENumber": {
+    "n": 37905,
+    "chi2_stat": 177352.7033,
+    "p_value": 0.0,
+    "significant": true,
+    "flagged_digits": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "JEIdentifier": {
+    "n": 37905,
+    "chi2_stat": 177352.7033,
+    "p_value": 0.0,
+    "significant": true,
+    "flagged_digits": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "BLANK": {
+    "status": "skipped",
+    "reason": "insufficient data"
+  },
+  "SysManInd": {
+    "status": "skipped",
+    "reason": "insufficient data"
+  },
+  "UserDefined1": {
+    "status": "skipped",
+    "reason": "insufficient data"
+  },
+  "UserDefined2": {
+    "status": "skipped",
+    "reason": "insufficient data"
+  },
+  "UserDefined3": {
+    "status": "skipped",
+    "reason": "insufficient data"
+  },
+  "PeriodFlag": {
+    "status": "skipped",
+    "reason": "insufficient data"
+  },
+  "GLAccountEndingBalance": {
+    "status": "skipped",
+    "reason": "insufficient data"
+  },
+  "SortOrder": {
+    "status": "skipped",
+    "reason": "insufficient data"
+  },
+  "Category": {
+    "status": "skipped",
+    "reason": "insufficient data"
+  },
+  "Marked": {
+    "status": "skipped",
+    "reason": "insufficient data"
+  },
+  "MarkedInReport": {
+    "status": "skipped",
+    "reason": "insufficient data"
+  }
+}

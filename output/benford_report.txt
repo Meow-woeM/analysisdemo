@@ -1,0 +1,238 @@
+
+======================================================================
+  BENFORD'S LAW FRAUD DETECTION REPORT
+======================================================================
+
+  Source file     : je_samples.xlsx
+  Analysis run at : 2026-02-05 02:46:51
+  Significance    : 0.05 (alpha)
+  Digit deviation : >3.0 pp flagged
+
+======================================================================
+  WHAT IS BENFORD'S LAW?
+======================================================================
+
+  Benford's Law predicts the frequency of leading digits in many
+  real-world numeric datasets. The expected distribution is:
+
+    Digit | Expected %
+    ------+-----------
+      1   |  30.1%
+      2   |  17.6%
+      3   |  12.5%
+      4   |   9.7%
+      5   |   7.9%
+      6   |   6.7%
+      7   |   5.8%
+      8   |   5.1%
+      9   |   4.6%
+
+  Deviations from this pattern may indicate fabricated or
+  manipulated data, though they can also have innocent causes.
+
+======================================================================
+  ANALYSIS: Amount
+======================================================================
+
+  Usable values (n)  : 37,905
+  Chi-squared stat   : 800.10
+  p-value            : 0.000000
+  Statistically sig. : YES - distribution deviates significantly
+
+  Digit    Observed%  Expected%  Deviation   Flag
+  -----------------------------------------------
+    1          30.20      30.10      +0.10
+    2          18.32      17.61      +0.71
+    3          11.78      12.49      -0.72
+    4           9.06       9.69      -0.63
+    5           7.45       7.92      -0.47
+    6           6.28       6.69      -0.41
+    7           4.97       5.80      -0.83
+    8           4.53       5.12      -0.59
+    9           7.41       4.58      +2.84
+
+======================================================================
+  ANALYSIS: Credit
+======================================================================
+
+  Usable values (n)  : 18,954
+  Chi-squared stat   : 399.88
+  p-value            : 0.000000
+  Statistically sig. : YES - distribution deviates significantly
+
+  Digit    Observed%  Expected%  Deviation   Flag
+  -----------------------------------------------
+    1          30.20      30.10      +0.10
+    2          18.32      17.61      +0.71
+    3          11.78      12.49      -0.71
+    4           9.06       9.69      -0.63
+    5           7.45       7.92      -0.46
+    6           6.28       6.69      -0.42
+    7           4.96       5.80      -0.83
+    8           4.53       5.12      -0.59
+    9           7.41       4.58      +2.84
+
+======================================================================
+  ANALYSIS: AbsoluteAmount
+======================================================================
+
+  Skipped: fewer than 50 usable values.
+
+======================================================================
+  ANALYSIS: JEEntryKey
+======================================================================
+
+  Usable values (n)  : 37,905
+  Chi-squared stat   : 177352.70
+  p-value            : 0.000000
+  Statistically sig. : YES - distribution deviates significantly
+
+  Digit    Observed%  Expected%  Deviation   Flag
+  -----------------------------------------------
+    1           0.00      30.10     -30.10 ***
+    2         100.00      17.61     +82.39 ***
+    3           0.00      12.49     -12.49 ***
+    4           0.00       9.69      -9.69 ***
+    5           0.00       7.92      -7.92 ***
+    6           0.00       6.69      -6.69 ***
+    7           0.00       5.80      -5.80 ***
+    8           0.00       5.12      -5.12 ***
+    9           0.00       4.58      -4.58 ***
+
+  Anomalous digits: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  These digits appear more or less frequently than Benford's
+  Law would predict. Transactions with these leading digits
+  may warrant closer review.
+
+======================================================================
+  ANALYSIS: JENumber
+======================================================================
+
+  Usable values (n)  : 37,905
+  Chi-squared stat   : 177352.70
+  p-value            : 0.000000
+  Statistically sig. : YES - distribution deviates significantly
+
+  Digit    Observed%  Expected%  Deviation   Flag
+  -----------------------------------------------
+    1           0.00      30.10     -30.10 ***
+    2         100.00      17.61     +82.39 ***
+    3           0.00      12.49     -12.49 ***
+    4           0.00       9.69      -9.69 ***
+    5           0.00       7.92      -7.92 ***
+    6           0.00       6.69      -6.69 ***
+    7           0.00       5.80      -5.80 ***
+    8           0.00       5.12      -5.12 ***
+    9           0.00       4.58      -4.58 ***
+
+  Anomalous digits: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  These digits appear more or less frequently than Benford's
+  Law would predict. Transactions with these leading digits
+  may warrant closer review.
+
+======================================================================
+  ANALYSIS: JEIdentifier
+======================================================================
+
+  Usable values (n)  : 37,905
+  Chi-squared stat   : 177352.70
+  p-value            : 0.000000
+  Statistically sig. : YES - distribution deviates significantly
+
+  Digit    Observed%  Expected%  Deviation   Flag
+  -----------------------------------------------
+    1           0.00      30.10     -30.10 ***
+    2         100.00      17.61     +82.39 ***
+    3           0.00      12.49     -12.49 ***
+    4           0.00       9.69      -9.69 ***
+    5           0.00       7.92      -7.92 ***
+    6           0.00       6.69      -6.69 ***
+    7           0.00       5.80      -5.80 ***
+    8           0.00       5.12      -5.12 ***
+    9           0.00       4.58      -4.58 ***
+
+  Anomalous digits: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  These digits appear more or less frequently than Benford's
+  Law would predict. Transactions with these leading digits
+  may warrant closer review.
+
+======================================================================
+  ANALYSIS: BLANK
+======================================================================
+
+  Skipped: fewer than 50 usable values.
+
+======================================================================
+  ANALYSIS: SysManInd
+======================================================================
+
+  Skipped: fewer than 50 usable values.
+
+======================================================================
+  ANALYSIS: UserDefined1
+======================================================================
+
+  Skipped: fewer than 50 usable values.
+
+======================================================================
+  ANALYSIS: UserDefined2
+======================================================================
+
+  Skipped: fewer than 50 usable values.
+
+======================================================================
+  ANALYSIS: UserDefined3
+======================================================================
+
+  Skipped: fewer than 50 usable values.
+
+======================================================================
+  ANALYSIS: PeriodFlag
+======================================================================
+
+  Skipped: fewer than 50 usable values.
+
+======================================================================
+  ANALYSIS: GLAccountEndingBalance
+======================================================================
+
+  Skipped: fewer than 50 usable values.
+
+======================================================================
+  ANALYSIS: SortOrder
+======================================================================
+
+  Skipped: fewer than 50 usable values.
+
+======================================================================
+  ANALYSIS: Category
+======================================================================
+
+  Skipped: fewer than 50 usable values.
+
+======================================================================
+  ANALYSIS: Marked
+======================================================================
+
+  Skipped: fewer than 50 usable values.
+
+======================================================================
+  ANALYSIS: MarkedInReport
+======================================================================
+
+  Skipped: fewer than 50 usable values.
+
+======================================================================
+  SUMMARY
+======================================================================
+
+  Columns with statistically significant deviations:
+    - Amount  (p = 0.000000)
+    - Credit  (p = 0.000000)
+    - JEEntryKey  (p = 0.000000)
+    - JENumber  (p = 0.000000)
+    - JEIdentifier  (p = 0.000000)
+
+  RECOMMENDATION: Review flagged transactions in benford_flagged.csv
+  These deviations do not prove fraud but indicate areas that may
+  benefit from further investigation.
